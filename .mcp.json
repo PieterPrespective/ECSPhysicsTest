@@ -1,0 +1,30 @@
+{
+  "mcpServers": {
+    "chroma": {
+      "command": "uvx",
+      "args": [
+        "chroma-mcp",
+        "--client-type",
+        "persistent",
+        "--data-dir",
+        "./Claude_Memory_Stores"
+      ]
+    },
+	"umcp-docker": {
+      "command": "docker",
+      "args": [
+	  "run", "-i", 
+	  "--volume", "./TestResults:/app/TestResults",
+	  "--env", "DOTNET_RUNNING_IN_CONTAINER=true", 
+	  "--env", "ENABLE_LOGGING=false",
+	  "umcpserver" ]
+    },
+	"puppeteer": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-puppeteer"
+      ]
+    }
+  }
+}

@@ -1,0 +1,13 @@
+- IssueID = PPTP-Story-001
+- Target Folder = Assets/PPTP
+- Please read 'Claude_Prompts/PPTPBasePrompt.md' for project context
+- This is a continuation of the issue PPTP-Story-001, so please read the chroma article on that issue
+- Please create a new system 'BallBoxAlternateSystem' 
+- functionally it should be comparable to the created 'Mandelbrot3DSystem'. Simularly this system should work in burst ECS, and use parallel jobs to render/generate a mesh on an entity 
+- in this case it should animate/tween between a cube shape and a ball shape in runtime
+- runtime component/authoring settings should include
+	- the duration between a shape change
+	- the size of the ball
+	- the number of verts/tesselation of the ball
+	- the size of the cube
+	- the number of verts/tesselation of the cube
