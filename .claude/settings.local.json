@@ -22,7 +22,8 @@
       "mcp__umcp-docker__MarkStartOfNewStep",
       "mcp__umcp-docker__RequestStepLogs",
       "mcp__umcp-docker__RunTests",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)"
     ]
   },
   "enableAllProjectMcpServers": true,

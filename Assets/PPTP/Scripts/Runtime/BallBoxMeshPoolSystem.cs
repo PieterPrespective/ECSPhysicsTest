@@ -17,7 +17,7 @@ namespace PPTP
     [UpdateBefore(typeof(BallBoxAlternateSystem))]
     public partial class BallBoxMeshPoolSystem : SystemBase
     {
-        private const int MAX_MESHES = 10;
+        private const int MAX_MESHES = 10000;
         private Mesh[] meshPool;
         private BatchMeshID[] registeredMeshIDs;
         private NativeArray<bool> meshInUse;
@@ -398,6 +398,15 @@ namespace PPTP
                     meshInUse[meshPoolIndex.Value] = true;
                 }
             }).WithoutBurst().Run();
+        }
+
+        /// <summary>
+        /// Requests a mesh from the pool for a new entity
+        /// </summary>
+        /// <returns>Mesh pool index, or -1 if no meshes available</returns>
+        public int RequestMesh()
+        {
+            return GetAvailableMeshIndex();
         }
 
         /// <summary>

@@ -1,0 +1,12 @@
+- IssueID = PPTP-Story-001
+- Target Folder = Assets/PPTP
+- Please read 'Claude_Prompts/PPTPBasePrompt.md' for project context
+- Please check the rendering methods applied in the 'BallBoxAlternateSystem' against the approach used in the following script: 'https://github.com/Dreaming381/Latios-Framework-Add-Ons/blob/main/AddOns/Cyline/BuildLineRenderer3DMeshSystem.cs' 
+	- The Approach used in 'BuildLineRenderer3DMeshSystem.cs' doesn't seem to rely on updating on the main thread - is there some way we could make use of this system without losing the current mesh generation and rendering capabilities; specifically
+		- Multiple seperate instances, each with a unique mesh - likely with different UVW, materials and vertex count
+		- Meshes need to be able to change in runtime (morph)
+		- Please deeply investigate and report an what would work best
+- Likely you will want to explore the 'Latios-Framework' codebase further, specifically:
+	- https://github.com/Dreaming381/Latios-Framework/blob/e8809e9c337bf958683824d2c7d3843f78cd5ec2/Kinemation/Systems/KinemationSuperSystems.cs
+	- https://github.com/Dreaming381/Latios-Framework/blob/e8809e9c337bf958683824d2c7d3843f78cd5ec2/Kinemation/Systems/PreBatching/UpdateDeformedMeshBoundsSystem.cs
+	- https://github.com/Dreaming381/Latios-Framework/blob/e8809e9c337bf958683824d2c7d3843f78cd5ec2/Kinemation/Systems/UnityReplacements/LatiosRenderBoundsUpdateSystem.cs
